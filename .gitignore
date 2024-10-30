@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###BOT SETTINGS###
+src/main/resources/application.properties
