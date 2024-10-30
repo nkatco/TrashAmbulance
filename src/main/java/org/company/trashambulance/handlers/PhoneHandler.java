@@ -1,6 +1,6 @@
 package org.company.trashambulance.handlers;
 
-import lombok.extern.slf4j.Slf4j;
+import org.company.trashambulance.utils.CantUnderstandUtils;
 import org.company.trashambulance.utils.Consts;
 import org.company.trashambulance.commands.UserAddCommand;
 import org.company.trashambulance.models.Command;
@@ -16,7 +16,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.util.Map;
 
 @Component
-@Slf4j
 public class PhoneHandler {
 
     private final Map<String, Command> commands;
@@ -29,14 +28,16 @@ public class PhoneHandler {
         );
     }
     public TelegramMessage handlePhone(Update update) {
-        String state = stateData.getCurrentState();
+        String state = stateData.getCurrentStateMap().get(update.getMessage().getFrom().getId());
+        System.out.println("STATE: " + state);
         long chatId = update.getMessage().getChatId();
 
         var commandHandler = commands.get(state);
         if (commandHandler != null) {
             return commandHandler.apply(update);
         } else {
-            return new TelegramSendMessage(new SendMessage(String.valueOf(chatId), Consts.UNKNOWN_COMMAND), String.valueOf(chatId));
+            SendMessage message = CantUnderstandUtils.getSendMessage(String.valueOf(chatId));
+            return new TelegramSendMessage(message, String.valueOf(chatId));
         }
     }
 }

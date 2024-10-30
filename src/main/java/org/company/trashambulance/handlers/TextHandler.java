@@ -1,8 +1,7 @@
 package org.company.trashambulance.handlers;
 
 import lombok.extern.slf4j.Slf4j;
-import org.company.trashambulance.utils.Consts;
-import org.company.trashambulance.commands.FormAddressCommand;
+import org.company.trashambulance.utils.CantUnderstandUtils;
 import org.company.trashambulance.commands.FormTextCommand;
 import org.company.trashambulance.models.Command;
 import org.company.trashambulance.models.TelegramMessage;
@@ -27,12 +26,10 @@ public class TextHandler {
     private final Map<String, Command> states;
 
     public TextHandler(
-            @Autowired FormTextCommand formTextCommand,
-            @Autowired FormAddressCommand formAddressCommand
+            @Autowired FormTextCommand formTextCommand
             ) {
         this.states = new HashMap<>();
         states.put(States.FORM_STATE, formTextCommand);
-        states.put(States.FORM_ADDRESS_STATE, formAddressCommand);
     }
 
     public TelegramMessage handleCommands(Update update) {
@@ -45,7 +42,8 @@ public class TextHandler {
         if (commandHandler != null) {
             return commandHandler.apply(update);
         } else {
-            return new TelegramSendMessage(new SendMessage(chatId, Consts.CANT_UNDERSTAND), chatId);
+            SendMessage message = CantUnderstandUtils.getSendMessage(chatId);
+            return new TelegramSendMessage(message, chatId);
         }
     }
 }

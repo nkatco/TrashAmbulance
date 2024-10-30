@@ -36,7 +36,7 @@ public class AddFormCallback implements CallbackHandler {
 
             userService.saveUser(user);
 
-            String text = EmojiParser.parseToUnicode(":page_facing_up: Отправьте боту сообщение с изображением и текстом, содержащее ваше обращение.");
+            String text = EmojiParser.parseToUnicode(":page_facing_up: Отправьте фотографию с описанием проблемы и адресом.");
 
             InlineKeyboardMarkup markupInLine = new InlineKeyboardMarkup();
             List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();

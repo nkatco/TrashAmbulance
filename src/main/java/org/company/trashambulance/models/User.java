@@ -53,7 +53,6 @@ public class User {
         return Objects.equals(id, user.id) &&
                 Objects.equals(telegramId, user.telegramId) &&
                 Objects.equals(name, user.name) &&
-                Objects.equals(phone, user.phone) &&
                 Objects.equals(firstLoginDate, user.firstLoginDate) &&
                 Objects.equals(isActive, user.isActive) &&
                 Objects.equals(state, user.state);

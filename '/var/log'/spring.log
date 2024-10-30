@@ -1,311 +1,64 @@
-2024-10-23T00:06:42.610+04:00  WARN 18452 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:06:42.689+04:00 DEBUG 18452 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:06:42.770+04:00 DEBUG 18452 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:06:42.795+04:00 DEBUG 18452 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:06:42.825+04:00 DEBUG 18452 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:06:42.850+04:00  WARN 18452 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:06:47.282+04:00 ERROR 18452 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.h.engine.jdbc.spi.SqlExceptionHelper   : Столбец "F1_0.MESSAGE_ID" не найден
-Column "F1_0.MESSAGE_ID" not found; SQL statement:
-select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=? [42122-224]
-2024-10-23T00:06:47.323+04:00 ERROR 18452 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : could not prepare statement [Столбец "F1_0.MESSAGE_ID" не найден
-Column "F1_0.MESSAGE_ID" not found; SQL statement:
-select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=? [42122-224]] [select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=?]; SQL [select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=?]
-
-org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement [Столбец "F1_0.MESSAGE_ID" не найден
-Column "F1_0.MESSAGE_ID" not found; SQL statement:
-select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=? [42122-224]] [select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=?]; SQL [select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=?]
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:277) ~[spring-orm-6.1.13.jar:6.1.13]
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.13.jar:6.1.13]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550) ~[spring-orm-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.3.4.jar:3.3.4]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.13.jar:6.1.13]
-	at jdk.proxy2/jdk.proxy2.$Proxy121.findUserByTelegramId(Unknown Source) ~[na:na]
-	at org.company.trashambulance.services.UserService.existsByTelegramId(UserService.java:16) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.company.trashambulance.services.UserService$$SpringCGLIB$$0.existsByTelegramId(<generated>) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.checkMessage(TelegramBot.java:167) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:70) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement [Столбец "F1_0.MESSAGE_ID" не найден
-Column "F1_0.MESSAGE_ID" not found; SQL statement:
-select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=? [42122-224]] [select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=?]
-	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:194) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:155) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.lambda$list$0(JdbcSelectExecutor.java:85) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:231) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.loader.ast.internal.CollectionLoaderSingleKey.load(CollectionLoaderSingleKey.java:120) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.persister.collection.AbstractCollectionPersister.initialize(AbstractCollectionPersister.java:680) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.event.internal.DefaultInitializeCollectionEventListener.onInitializeCollection(DefaultInitializeCollectionEventListener.java:67) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.internal.SessionImpl.initializeCollection(SessionImpl.java:1692) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.collection.spi.AbstractPersistentCollection.lambda$initialize$3(AbstractPersistentCollection.java:615) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:264) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.collection.spi.AbstractPersistentCollection.forceInitialization(AbstractPersistentCollection.java:816) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.internal.StatefulPersistenceContext.initializeNonLazyCollections(StatefulPersistenceContext.java:1143) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.internal.StatefulPersistenceContext.initializeNonLazyCollections(StatefulPersistenceContext.java:1129) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:229) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:137) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:362) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:303) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:509) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:564) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223) ~[spring-data-jpa-3.3.4.jar:3.3.4]
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92) ~[spring-data-jpa-3.3.4.jar:3.3.4]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152) ~[spring-data-jpa-3.3.4.jar:3.3.4]
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140) ~[spring-data-jpa-3.3.4.jar:3.3.4]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.4.jar:3.3.4]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.4.jar:3.3.4]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:169) ~[spring-data-commons-3.3.4.jar:3.3.4]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148) ~[spring-data-commons-3.3.4.jar:3.3.4]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.3.4.jar:3.3.4]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.13.jar:6.1.13]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
-	... 25 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "F1_0.MESSAGE_ID" не найден
-Column "F1_0.MESSAGE_ID" not found; SQL statement:
-select f1_0.user_id,f1_0.id,f1_0.address,f1_0.chat_id,f1_0.creation_date,f1_0.is_active,f1_0.message_id,f1_0.photo,f1_0.telegram_id,f1_0.text from forms f1_0 where f1_0.user_id=? [42122-224]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.command.query.Select.prepareExpressions(Select.java:1170) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.command.query.Query.prepare(Query.java:218) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.command.Parser.prepareCommand(Parser.java:489) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93) ~[h2-2.2.224.jar:2.2.224]
-	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316) ~[h2-2.2.224.jar:2.2.224]
-	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:328) ~[HikariCP-5.1.0.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
-	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:153) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:183) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
-	... 77 common frames omitted
-
-2024-10-23T00:07:12.508+04:00  WARN 8880 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:07:12.569+04:00 DEBUG 8880 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:07:12.650+04:00 DEBUG 8880 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:07:12.676+04:00 DEBUG 8880 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:07:12.709+04:00 DEBUG 8880 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:07:12.745+04:00  WARN 8880 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:07:16.670+04:00 DEBUG 8880 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:07:16.675+04:00 DEBUG 8880 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:07:17.120+04:00 DEBUG 8880 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:07:17.121+04:00 DEBUG 8880 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:07:18.936+04:00 ERROR 8880 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:65) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:11:33.673+04:00  WARN 14584 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:11:33.742+04:00 DEBUG 14584 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:11:33.820+04:00 DEBUG 14584 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:11:33.841+04:00 DEBUG 14584 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:11:33.868+04:00 DEBUG 14584 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:11:33.895+04:00  WARN 14584 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:11:36.490+04:00 DEBUG 14584 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:11:36.497+04:00 DEBUG 14584 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:11:36.747+04:00 DEBUG 14584 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:11:36.748+04:00 DEBUG 14584 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:13:07.247+04:00  WARN 17668 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:13:07.324+04:00 DEBUG 17668 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:13:07.412+04:00 DEBUG 17668 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:13:07.443+04:00 DEBUG 17668 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:13:07.480+04:00 DEBUG 17668 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:13:07.507+04:00  WARN 17668 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:13:15.856+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:13:15.863+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:13:16.559+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:13:16.560+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:13:24.171+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:13:24.172+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:13:24.502+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:13:24.502+04:00 DEBUG 17668 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:14:58.632+04:00  WARN 20660 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:14:58.689+04:00 DEBUG 20660 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:14:58.771+04:00 DEBUG 20660 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:14:58.797+04:00 DEBUG 20660 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:14:58.825+04:00 DEBUG 20660 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:14:58.849+04:00  WARN 20660 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:15:11.078+04:00 DEBUG 20660 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:15:11.086+04:00 DEBUG 20660 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:15:11.447+04:00 DEBUG 20660 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:15:11.448+04:00 DEBUG 20660 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:18:00.822+04:00  WARN 18576 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:18:00.894+04:00 DEBUG 18576 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:18:00.974+04:00 DEBUG 18576 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:18:00.996+04:00 DEBUG 18576 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:18:01.023+04:00 DEBUG 18576 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:18:01.047+04:00  WARN 18576 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:19:11.014+04:00  WARN 12648 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:19:11.091+04:00 DEBUG 12648 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:19:11.194+04:00 DEBUG 12648 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:19:11.230+04:00 DEBUG 12648 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:19:11.267+04:00 DEBUG 12648 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:19:11.304+04:00  WARN 12648 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:19:38.054+04:00  WARN 16348 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:19:38.121+04:00 DEBUG 16348 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:19:38.199+04:00 DEBUG 16348 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:19:38.223+04:00 DEBUG 16348 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:19:38.253+04:00 DEBUG 16348 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:19:38.282+04:00  WARN 16348 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:20:53.413+04:00  WARN 12244 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:20:53.482+04:00 DEBUG 12244 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:20:53.557+04:00 DEBUG 12244 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:20:53.580+04:00 DEBUG 12244 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:20:53.609+04:00 DEBUG 12244 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:20:53.637+04:00  WARN 12244 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:20:57.229+04:00 ERROR 12244 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:84) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:21:35.069+04:00  WARN 1752 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:21:35.139+04:00 DEBUG 1752 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:21:35.213+04:00 DEBUG 1752 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:21:35.235+04:00 DEBUG 1752 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:21:35.262+04:00 DEBUG 1752 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:21:35.288+04:00  WARN 1752 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:23:31.654+04:00  WARN 20668 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:23:31.721+04:00 DEBUG 20668 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:23:31.794+04:00 DEBUG 20668 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:23:31.817+04:00 DEBUG 20668 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:23:31.845+04:00 DEBUG 20668 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:23:31.869+04:00  WARN 20668 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:32:13.788+04:00  WARN 16320 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:32:13.856+04:00 DEBUG 16320 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:32:13.933+04:00 DEBUG 16320 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:32:13.954+04:00 DEBUG 16320 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:32:13.982+04:00 DEBUG 16320 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:32:14.005+04:00  WARN 16320 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:33:39.498+04:00  WARN 3968 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:33:39.559+04:00 DEBUG 3968 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:33:39.630+04:00 DEBUG 3968 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:33:39.652+04:00 DEBUG 3968 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:33:39.679+04:00 DEBUG 3968 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:33:39.702+04:00  WARN 3968 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:33:44.338+04:00 DEBUG 3968 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T00:33:44.344+04:00 DEBUG 3968 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T00:33:44.592+04:00 DEBUG 3968 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T00:33:44.594+04:00 DEBUG 3968 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T00:33:51.762+04:00 ERROR 3968 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:84) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:34:11.508+04:00  WARN 20112 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:34:11.581+04:00 DEBUG 20112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:34:11.675+04:00 DEBUG 20112 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:34:11.700+04:00 DEBUG 20112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:34:11.733+04:00 DEBUG 20112 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:34:11.761+04:00  WARN 20112 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:34:30.534+04:00 ERROR 20112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:85) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:34:32.017+04:00 ERROR 20112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Chat.equals(Object)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFromChat()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:85) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:35:54.170+04:00  WARN 2476 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:35:54.238+04:00 DEBUG 2476 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:35:54.315+04:00 DEBUG 2476 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:35:54.336+04:00 DEBUG 2476 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:35:54.365+04:00 DEBUG 2476 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:35:54.387+04:00  WARN 2476 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:37:24.278+04:00  WARN 14436 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:37:24.339+04:00 DEBUG 14436 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:37:24.413+04:00 DEBUG 14436 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:37:24.434+04:00 DEBUG 14436 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:37:24.460+04:00 DEBUG 14436 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:37:24.483+04:00  WARN 14436 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:37:42.160+04:00 ERROR 14436 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.User.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFrom()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.User.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFrom()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:87) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:42:44.787+04:00 ERROR 14436 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "org.telegram.telegrambots.meta.api.objects.User.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFrom()" is null
-
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.User.getId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getForwardFrom()" is null
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:87) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:43:00.868+04:00  WARN 14296 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T00:43:00.933+04:00 DEBUG 14296 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T00:43:01.011+04:00 DEBUG 14296 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T00:43:01.034+04:00 DEBUG 14296 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T00:43:01.062+04:00 DEBUG 14296 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T00:43:01.087+04:00  WARN 14296 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T00:45:57.624+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connection reset
+2024-10-28T09:54:54.675+04:00  WARN 8492 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T09:54:54.748+04:00 DEBUG 8492 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T09:54:54.828+04:00 DEBUG 8492 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T09:54:54.853+04:00 DEBUG 8492 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T09:54:54.888+04:00 DEBUG 8492 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T09:54:54.921+04:00  WARN 8492 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:31:40.368+04:00  WARN 21656 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:31:40.429+04:00 DEBUG 21656 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:31:40.508+04:00 DEBUG 21656 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:31:40.530+04:00 DEBUG 21656 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:31:40.564+04:00 DEBUG 21656 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:31:40.586+04:00  WARN 21656 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:32:26.350+04:00  WARN 18100 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:32:26.412+04:00 DEBUG 18100 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:32:26.486+04:00 DEBUG 18100 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:32:26.508+04:00 DEBUG 18100 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:32:26.535+04:00 DEBUG 18100 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:32:26.556+04:00  WARN 18100 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:35:04.874+04:00  WARN 2316 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:35:04.932+04:00 DEBUG 2316 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:35:05.010+04:00 DEBUG 2316 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:35:05.031+04:00 DEBUG 2316 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:35:05.058+04:00 DEBUG 2316 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:35:05.079+04:00  WARN 2316 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:35:46.071+04:00  WARN 15996 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:35:46.137+04:00 DEBUG 15996 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:35:46.212+04:00 DEBUG 15996 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:35:46.237+04:00 DEBUG 15996 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:35:46.265+04:00 DEBUG 15996 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:35:46.290+04:00  WARN 15996 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:36:46.323+04:00  WARN 21320 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:36:46.380+04:00 DEBUG 21320 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:36:46.455+04:00 DEBUG 21320 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:36:46.476+04:00 DEBUG 21320 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:36:46.501+04:00 DEBUG 21320 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:36:46.523+04:00  WARN 21320 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:37:03.263+04:00  WARN 20536 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:37:03.324+04:00 DEBUG 20536 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:37:03.402+04:00 DEBUG 20536 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:37:03.424+04:00 DEBUG 20536 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:37:03.451+04:00 DEBUG 20536 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:37:03.474+04:00  WARN 20536 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:38:24.259+04:00  WARN 19084 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:38:24.318+04:00 DEBUG 19084 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:38:24.394+04:00 DEBUG 19084 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:38:24.417+04:00 DEBUG 19084 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:38:24.443+04:00 DEBUG 19084 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:38:24.465+04:00  WARN 19084 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T15:38:36.345+04:00  WARN 5932 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T15:38:36.408+04:00 DEBUG 5932 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T15:38:36.479+04:00 DEBUG 5932 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T15:38:36.502+04:00 DEBUG 5932 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T15:38:36.529+04:00 DEBUG 5932 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T15:38:36.553+04:00  WARN 5932 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T16:51:12.098+04:00  WARN 2772 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T16:51:12.155+04:00 DEBUG 2772 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-10-28T16:51:12.233+04:00 DEBUG 2772 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-10-28T16:51:12.255+04:00 DEBUG 2772 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-10-28T16:51:12.281+04:00 DEBUG 2772 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-10-28T16:51:12.303+04:00  WARN 2772 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:33:09.171+04:00 ERROR 2772 --- [TrashAmbulance] [ao_ecologia_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connection reset
 
 java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[na:na]
@@ -336,172 +89,7 @@ java.net.SocketException: Connection reset
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
 
-2024-10-23T00:46:09.226+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Этот хост неизвестен (api.telegram.org)
-
-java.net.UnknownHostException: Этот хост неизвестен (api.telegram.org)
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52) ~[na:na]
-	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211) ~[na:na]
-	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828) ~[na:na]
-	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:46:09.861+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : api.telegram.org
-
-java.net.UnknownHostException: api.telegram.org
-	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:46:10.421+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : api.telegram.org
-
-java.net.UnknownHostException: api.telegram.org
-	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:46:11.839+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : api.telegram.org
-
-java.net.UnknownHostException: api.telegram.org
-	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:46:13.561+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : api.telegram.org
-
-java.net.UnknownHostException: api.telegram.org
-	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:46:16.527+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : api.telegram.org
-
-java.net.UnknownHostException: api.telegram.org
-	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688) ~[na:na]
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T00:58:43.657+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection timed out: getsockopt
-
-org.apache.http.conn.HttpHostConnectException: Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection timed out: getsockopt
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-Caused by: java.net.ConnectException: Connection timed out: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
-	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
-	... 10 common frames omitted
-
-2024-10-23T00:58:54.209+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Software caused connection abort: getsockopt
-
-java.net.SocketException: Software caused connection abort: getsockopt
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
-	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T01:00:58.160+04:00 ERROR 14296 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connection reset
+2024-10-28T18:33:34.469+04:00 ERROR 2772 --- [TrashAmbulance] [ao_ecologia_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connection reset
 
 java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[na:na]
@@ -532,362 +120,34 @@ java.net.SocketException: Connection reset
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
 
-2024-10-23T01:12:56.755+04:00  WARN 17304 --- [TrashAmbulance] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'formFeedbackCommand': Unsatisfied dependency expressed through field 'telegramBotUtils': Error creating bean with name 'telegramBotUtils' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\utils\TelegramBotUtils.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'telegramBot' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\TelegramBot.class]: Unsatisfied dependency expressed through constructor parameter 6: Error creating bean with name 'chatHandler' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\handlers\ChatHandler.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'formFeedbackCommand': Requested bean is currently in creation: Is there an unresolvable circular reference?
-2024-10-23T01:12:56.993+04:00 ERROR 17304 --- [TrashAmbulance] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2024-10-28T20:04:56.269+04:00 ERROR 2772 --- [TrashAmbulance] [ao_ecologia_bot Telegram Connection] o.t.t.u.DefaultBotSession                : Connection reset
 
-***************************
-APPLICATION FAILED TO START
-***************************
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066) ~[na:na]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:249) ~[telegrambots-6.9.7.1.jar:na]
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:188) ~[telegrambots-6.9.7.1.jar:na]
 
-Description:
-
-The dependencies of some of the beans in the application context form a cycle:
-
-┌─────┐
-|  formFeedbackCommand (field private org.company.trashambulance.utils.TelegramBotUtils org.company.trashambulance.commands.FormFeedbackCommand.telegramBotUtils)
-↑     ↓
-|  telegramBotUtils defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\utils\TelegramBotUtils.class]
-↑     ↓
-|  telegramBot defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\TelegramBot.class]
-↑     ↓
-|  chatHandler defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\handlers\ChatHandler.class]
-└─────┘
-
-
-Action:
-
-Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
-
-2024-10-23T01:13:13.445+04:00  WARN 13452 --- [TrashAmbulance] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'formFeedbackCommand': Unsatisfied dependency expressed through field 'telegramBotUtils': Error creating bean with name 'telegramBotUtils' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\utils\TelegramBotUtils.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'telegramBot' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\TelegramBot.class]: Unsatisfied dependency expressed through constructor parameter 6: Error creating bean with name 'chatHandler' defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\handlers\ChatHandler.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'formFeedbackCommand': Requested bean is currently in creation: Is there an unresolvable circular reference?
-2024-10-23T01:13:13.675+04:00 ERROR 13452 --- [TrashAmbulance] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The dependencies of some of the beans in the application context form a cycle:
-
-┌─────┐
-|  formFeedbackCommand (field private org.company.trashambulance.utils.TelegramBotUtils org.company.trashambulance.commands.FormFeedbackCommand.telegramBotUtils)
-↑     ↓
-|  telegramBotUtils defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\utils\TelegramBotUtils.class]
-↑     ↓
-|  telegramBot defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\TelegramBot.class]
-↑     ↓
-|  chatHandler defined in file [C:\Projects\TrashAmbulance\target\classes\org\company\trashambulance\handlers\ChatHandler.class]
-└─────┘
-
-
-Action:
-
-Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
-
-2024-10-23T01:15:05.217+04:00  WARN 17396 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:15:05.279+04:00 DEBUG 17396 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:15:05.364+04:00 DEBUG 17396 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:15:05.389+04:00 DEBUG 17396 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:15:05.428+04:00 DEBUG 17396 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:15:05.453+04:00  WARN 17396 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:15:14.837+04:00 DEBUG 17396 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:15:14.845+04:00 DEBUG 17396 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:15:15.241+04:00 DEBUG 17396 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:15:15.242+04:00 DEBUG 17396 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:17:20.405+04:00  WARN 6092 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:17:20.464+04:00 DEBUG 6092 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:17:20.544+04:00 DEBUG 6092 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:17:20.568+04:00 DEBUG 6092 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:17:20.597+04:00 DEBUG 6092 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:17:20.622+04:00  WARN 6092 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:18:45.925+04:00  WARN 5860 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:18:45.986+04:00 DEBUG 5860 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:18:46.065+04:00 DEBUG 5860 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:18:46.088+04:00 DEBUG 5860 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:18:46.115+04:00 DEBUG 5860 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:18:46.137+04:00  WARN 5860 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:19:21.276+04:00  WARN 17108 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:19:21.336+04:00 DEBUG 17108 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:19:21.415+04:00 DEBUG 17108 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:19:21.438+04:00 DEBUG 17108 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:19:21.467+04:00 DEBUG 17108 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:19:21.493+04:00  WARN 17108 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:19:23.852+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:19:23.859+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:19:24.125+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:19:24.126+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:20:01.258+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:20:01.258+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:20:01.485+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:20:01.486+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:20:15.266+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:20:15.266+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:20:15.618+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:20:15.618+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:21:56.714+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:21:56.714+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:21:56.955+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:21:56.955+04:00 DEBUG 17108 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:29:10.994+04:00  WARN 19000 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:29:11.057+04:00 DEBUG 19000 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:29:11.143+04:00 DEBUG 19000 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:29:11.169+04:00 DEBUG 19000 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:29:11.198+04:00 DEBUG 19000 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:29:11.222+04:00  WARN 19000 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:29:37.246+04:00  WARN 17852 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T01:29:37.304+04:00 DEBUG 17852 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T01:29:37.383+04:00 DEBUG 17852 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T01:29:37.407+04:00 DEBUG 17852 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T01:29:37.435+04:00 DEBUG 17852 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T01:29:37.458+04:00  WARN 17852 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T01:29:40.477+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:29:40.484+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:29:41.852+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:29:41.854+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T01:29:50.199+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T01:29:50.200+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T01:29:50.425+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T01:29:50.426+04:00 DEBUG 17852 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:06:04.052+04:00  WARN 7532 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:06:04.119+04:00 DEBUG 7532 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:06:04.201+04:00 DEBUG 7532 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:06:04.226+04:00 DEBUG 7532 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:06:04.262+04:00 DEBUG 7532 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:06:04.294+04:00  WARN 7532 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:06:05.468+04:00  WARN 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Отсутствуют UserId и TelegramId
-2024-10-23T11:06:29.022+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:06:29.028+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:06:29.712+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:06:29.713+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:06:32.978+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:06:32.978+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:06:33.061+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:06:33.061+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:06:36.214+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:06:36.214+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:06:36.296+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:06:36.296+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:06:50.565+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:06:50.565+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:06:50.838+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:06:50.838+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:07:00.149+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:07:00.149+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:07:00.487+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:07:00.488+04:00 DEBUG 7532 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:16:03.733+04:00  WARN 15356 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:16:03.797+04:00 DEBUG 15356 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:16:03.868+04:00 DEBUG 15356 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:16:03.891+04:00 DEBUG 15356 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:16:03.917+04:00 DEBUG 15356 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:16:03.938+04:00  WARN 15356 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:16:20.292+04:00  WARN 16136 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:16:20.355+04:00 DEBUG 16136 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:16:20.428+04:00 DEBUG 16136 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:16:20.450+04:00 DEBUG 16136 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:16:20.479+04:00 DEBUG 16136 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:16:20.500+04:00  WARN 16136 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:16:21.808+04:00 ERROR 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Ошибка при отправке сообщения
-
-org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: phone number can be requested in private chats only
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponse(PartialBotApiMethod.java:34) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:20) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:15) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1182) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:61) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.company.trashambulance.TelegramBot.sendMessage(TelegramBot.java:149) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.checkMessage(TelegramBot.java:139) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:101) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:16:46.552+04:00 DEBUG 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:16:46.559+04:00 DEBUG 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:16:47.111+04:00 DEBUG 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:16:47.112+04:00 DEBUG 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:17:04.559+04:00 ERROR 16136 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Ошибка при отправке сообщения
-
-org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse entities: Character '#' is reserved and must be escaped with the preceding '\'
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponse(PartialBotApiMethod.java:34) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:20) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:15) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1182) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:61) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.company.trashambulance.TelegramBot.sendMessage(TelegramBot.java:149) ~[classes/:na]
-	at org.company.trashambulance.utils.TelegramBotUtils.sendMessageForChat(TelegramBotUtils.java:71) ~[classes/:na]
-	at org.company.trashambulance.commands.FormFeedbackCommand.apply(FormFeedbackCommand.java:43) ~[classes/:na]
-	at org.company.trashambulance.handlers.ChatHandler.handleCommands(ChatHandler.java:41) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:99) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:17:58.310+04:00  WARN 11464 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:17:58.375+04:00 DEBUG 11464 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:17:58.459+04:00 DEBUG 11464 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:17:58.482+04:00 DEBUG 11464 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:17:58.510+04:00 DEBUG 11464 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:17:58.532+04:00  WARN 11464 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:18:00.336+04:00 ERROR 11464 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Ошибка при отправке сообщения
-
-org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\'
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponse(PartialBotApiMethod.java:34) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:20) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:15) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1182) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:61) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.company.trashambulance.TelegramBot.sendMessage(TelegramBot.java:149) ~[classes/:na]
-	at org.company.trashambulance.utils.TelegramBotUtils.sendMessageForChat(TelegramBotUtils.java:71) ~[classes/:na]
-	at org.company.trashambulance.commands.FormFeedbackCommand.apply(FormFeedbackCommand.java:46) ~[classes/:na]
-	at org.company.trashambulance.handlers.ChatHandler.handleCommands(ChatHandler.java:41) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:99) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:18:32.248+04:00  WARN 15276 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:18:32.313+04:00 DEBUG 15276 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:18:32.392+04:00 DEBUG 15276 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:18:32.416+04:00 DEBUG 15276 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:18:32.443+04:00 DEBUG 15276 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:18:32.466+04:00  WARN 15276 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:18:35.948+04:00 ERROR 15276 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Ошибка при отправке сообщения
-
-org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: message to be replied not found
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponse(PartialBotApiMethod.java:34) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:20) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:15) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1182) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:61) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.company.trashambulance.TelegramBot.sendMessage(TelegramBot.java:149) ~[classes/:na]
-	at org.company.trashambulance.utils.TelegramBotUtils.sendMessageForChat(TelegramBotUtils.java:71) ~[classes/:na]
-	at org.company.trashambulance.commands.FormFeedbackCommand.apply(FormFeedbackCommand.java:50) ~[classes/:na]
-	at org.company.trashambulance.handlers.ChatHandler.handleCommands(ChatHandler.java:41) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:99) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:19:11.331+04:00  WARN 9112 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:19:11.389+04:00 DEBUG 9112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:19:11.466+04:00 DEBUG 9112 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:19:11.489+04:00 DEBUG 9112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:19:11.515+04:00 DEBUG 9112 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:19:11.538+04:00  WARN 9112 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:19:28.122+04:00  WARN 4992 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:19:28.181+04:00 DEBUG 4992 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:19:28.270+04:00 DEBUG 4992 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:19:28.300+04:00 DEBUG 4992 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:19:28.332+04:00 DEBUG 4992 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:19:28.359+04:00  WARN 4992 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:20:57.070+04:00  WARN 13068 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:20:57.124+04:00 DEBUG 13068 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:20:57.198+04:00 DEBUG 13068 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:20:57.219+04:00 DEBUG 13068 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:20:57.246+04:00 DEBUG 13068 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:20:57.266+04:00  WARN 13068 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:21:03.550+04:00 ERROR 13068 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] org.company.trashambulance.TelegramBot   : Ошибка при отправке сообщения
-
-org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error executing org.telegram.telegrambots.meta.api.methods.send.SendMessage query: [400] Bad Request: can't parse entities: Unsupported start tag "h1" at byte offset 3
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponseInternal(PartialBotApiMethod.java:54) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod.deserializeResponse(PartialBotApiMethod.java:34) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:20) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.api.methods.botapimethods.BotApiMethodMessage.deserializeResponse(BotApiMethodMessage.java:15) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1182) ~[telegrambots-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:61) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.company.trashambulance.TelegramBot.sendMessage(TelegramBot.java:149) ~[classes/:na]
-	at org.company.trashambulance.utils.TelegramBotUtils.sendMessageForChat(TelegramBotUtils.java:70) ~[classes/:na]
-	at org.company.trashambulance.commands.FormFeedbackCommand.apply(FormFeedbackCommand.java:43) ~[classes/:na]
-	at org.company.trashambulance.handlers.ChatHandler.handleCommands(ChatHandler.java:41) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:99) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:21:56.555+04:00  WARN 15984 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:21:56.612+04:00 DEBUG 15984 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:21:56.689+04:00 DEBUG 15984 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:21:56.710+04:00 DEBUG 15984 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:21:56.738+04:00 DEBUG 15984 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:21:56.760+04:00  WARN 15984 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:22:36.435+04:00  WARN 13988 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:22:36.491+04:00 DEBUG 13988 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:22:36.567+04:00 DEBUG 13988 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:22:36.589+04:00 DEBUG 13988 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:22:36.616+04:00 DEBUG 13988 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:22:36.637+04:00  WARN 13988 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:22:52.635+04:00  WARN 16228 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:22:52.696+04:00 DEBUG 16228 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:22:52.776+04:00 DEBUG 16228 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:22:52.800+04:00 DEBUG 16228 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:22:52.827+04:00 DEBUG 16228 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:22:52.850+04:00  WARN 16228 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:24:14.129+04:00 DEBUG 16228 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:24:14.135+04:00 DEBUG 16228 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:24:14.408+04:00 DEBUG 16228 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:24:14.409+04:00 DEBUG 16228 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:26:46.335+04:00  WARN 15112 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:26:46.394+04:00 DEBUG 15112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:26:46.471+04:00 DEBUG 15112 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:26:46.493+04:00 DEBUG 15112 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:26:46.521+04:00 DEBUG 15112 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:26:46.542+04:00  WARN 15112 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:26:59.601+04:00 DEBUG 15112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:26:59.608+04:00 DEBUG 15112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:26:59.857+04:00 DEBUG 15112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:26:59.859+04:00 DEBUG 15112 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:28:03.104+04:00  WARN 1900 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:28:03.164+04:00 DEBUG 1900 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:28:03.242+04:00 DEBUG 1900 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:28:03.264+04:00 DEBUG 1900 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:28:03.292+04:00 DEBUG 1900 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:28:03.315+04:00  WARN 1900 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:28:12.231+04:00 ERROR 1900 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.t.t.u.DefaultBotSession                : Cannot invoke "String.startsWith(String)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getText()" is null
-
-java.lang.NullPointerException: Cannot invoke "String.startsWith(String)" because the return value of "org.telegram.telegrambots.meta.api.objects.Message.getText()" is null
-	at org.company.trashambulance.TelegramBot.lambda$handleMessage$0(TelegramBot.java:102) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.checkMessage(TelegramBot.java:141) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.handleMessage(TelegramBot.java:101) ~[classes/:na]
-	at org.company.trashambulance.TelegramBot.onUpdateReceived(TelegramBot.java:75) ~[classes/:na]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27) ~[telegrambots-meta-6.9.7.1.jar:na]
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312) ~[telegrambots-6.9.7.1.jar:na]
-
-2024-10-23T11:28:32.825+04:00  WARN 14688 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:28:32.882+04:00 DEBUG 14688 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:28:32.960+04:00 DEBUG 14688 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:28:32.982+04:00 DEBUG 14688 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:28:33.009+04:00 DEBUG 14688 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:28:33.030+04:00  WARN 14688 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:28:34.412+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:28:34.418+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:28:35.770+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:28:35.771+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:29:08.519+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:29:08.519+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:29:08.757+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:29:08.758+04:00 DEBUG 14688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:30:11.511+04:00  WARN 15688 --- [TrashAmbulance] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-23T11:30:11.569+04:00 DEBUG 15688 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
-2024-10-23T11:30:11.644+04:00 DEBUG 15688 --- [TrashAmbulance] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-10-23T11:30:11.667+04:00 DEBUG 15688 --- [TrashAmbulance] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-10-23T11:30:11.693+04:00 DEBUG 15688 --- [TrashAmbulance] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-10-23T11:30:11.717+04:00  WARN 15688 --- [TrashAmbulance] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-10-23T11:30:14.869+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:30:14.875+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:30:15.224+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:30:15.225+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]
-2024-10-23T11:31:21.696+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : HTTP GET https://uselessfacts.jsph.pl/api/v2/facts/random?language=ru
-2024-10-23T11:31:21.697+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
-2024-10-23T11:31:21.935+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Response 200 OK
-2024-10-23T11:31:21.936+04:00 DEBUG 15688 --- [TrashAmbulance] [MyTestBoKatco_bot Telegram Executor] o.s.web.client.RestTemplate              : Reading to [org.company.trashambulance.models.FactResponse]

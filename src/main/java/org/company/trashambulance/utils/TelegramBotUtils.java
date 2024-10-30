@@ -22,6 +22,7 @@ import org.telegram.telegrambots.meta.api.objects.File;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.chatmember.ChatMember;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardRemove;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -64,6 +65,15 @@ public class TelegramBotUtils {
         message.setText(text);
         telegramBot.sendMessage(new TelegramSendMessage(message, String.valueOf(user.getChatId())));
     }
+    public void clearUserKeyboardMarkup(User user) {
+        SendMessage message = new SendMessage();
+        message.setChatId(user.getChatId());
+        message.setText("Вы были успешно зарегистрированы в сервисе. Поздравляю!");
+        ReplyKeyboardRemove keyboardRemove = new ReplyKeyboardRemove();
+        keyboardRemove.setRemoveKeyboard(true);
+        message.setReplyMarkup(keyboardRemove);
+        telegramBot.sendMessage(new TelegramSendMessage(message, String.valueOf(user.getChatId())));
+    }
     public void sendMessageForChat(String chatId, String text) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
@@ -100,7 +110,6 @@ public class TelegramBotUtils {
 
         int newMessageId = telegramBot.sendMessage(new TelegramSendPhoto(message, chatId));
 
-        sendForwardedMessageForChannel(chatId, messageId, fromChatId);
         return newMessageId;
     }
     public void sendForwardedMessageForChannel(String chatId, long messageId, long fromChatId) {
@@ -119,7 +128,7 @@ public class TelegramBotUtils {
             File file = telegramBot.execute(getFileRequest);
             String filePath = file.getFilePath();
 
-            if (!filePath.endsWith(".png") && !filePath.endsWith(".jpg")) {
+            if (!(filePath.toLowerCase().endsWith(".png") || filePath.toLowerCase().endsWith(".jpg") || filePath.toLowerCase().endsWith(".jpeg"))) {
                 logger.error("Invalid file format: {}", filePath);
                 return null;
             }
@@ -138,6 +147,7 @@ public class TelegramBotUtils {
             logger.info("Download photo with fileId {} successfully", fileId);
             return destinationPath;
         } catch (TelegramApiException e) {
+            e.printStackTrace();
             logger.error("Failed to download photo", e);
         }
         return null;
@@ -156,6 +166,7 @@ public class TelegramBotUtils {
                 fileOutputStream.write(dataBuffer, 0, bytesRead);
             }
         } catch (IOException e) {
+            e.printStackTrace();
             logger.error("Failed to download file", e);
         }
     }

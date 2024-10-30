@@ -6,7 +6,7 @@ import org.company.trashambulance.models.Command;
 import org.company.trashambulance.models.TelegramMessage;
 import org.company.trashambulance.models.TelegramSendPhoto;
 import org.company.trashambulance.models.User;
-import org.company.trashambulance.services.RandomFactsService;
+import org.company.trashambulance.services.BannerService;
 import org.company.trashambulance.services.UserService;
 import org.company.trashambulance.states.States;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +28,11 @@ public class StartCommand implements Command {
     @Autowired
     private UserService userService;
     @Autowired
-    private RandomFactsService randomFactsService;
+    private BannerService bannerService;
 
-    public static SendPhoto getStartCommand(RandomFactsService randomFactsService) {
+    public static SendPhoto getStartCommand(BannerService bannerService) {
         SendPhoto message = new SendPhoto();
-        String answer = EmojiParser.parseToUnicode("Добро пожаловать в {company_name}!" + " :blush:" + "\n\nПознавательно: " + randomFactsService.getRandomFact());
+        String answer = EmojiParser.parseToUnicode("Добро пожаловать в бот помощи по вывозу ТКО");
 
         message.setCaption(answer);
 
@@ -42,39 +42,10 @@ public class StartCommand implements Command {
         // Первая линия
 
         List<InlineKeyboardButton> rowInLine = new ArrayList<>();
-        var myFormsButton = new InlineKeyboardButton();
-
-        myFormsButton.setText(EmojiParser.parseToUnicode(":crown:" + " Мои заявки"));
-        myFormsButton.setCallbackData(CallbackType.MY_FORMS);
-
-        rowInLine.add(myFormsButton);
-
-        rowsInLine.add(rowInLine);
-
-        // Вторая линия
-
-        rowInLine = new ArrayList<>();
-
         var addFormButton = new InlineKeyboardButton();
-
-        addFormButton.setText(EmojiParser.parseToUnicode(":ok_woman:" + " Заполнить заявление"));
+        addFormButton.setText(EmojiParser.parseToUnicode(":articulated_lorry:" + " Заполнить заявление"));
         addFormButton.setCallbackData(CallbackType.ADD_FORM);
-
         rowInLine.add(addFormButton);
-
-        rowsInLine.add(rowInLine);
-
-        // Третья линия
-
-        rowInLine = new ArrayList<>();
-
-        var aboutBotButton = new InlineKeyboardButton();
-
-        aboutBotButton.setText(EmojiParser.parseToUnicode(":closed_book:" + " О боте"));
-        aboutBotButton.setCallbackData(CallbackType.ABOUT_BOT);
-
-        rowInLine.add(aboutBotButton);
-
         rowsInLine.add(rowInLine);
 
         // Формирование клавиатуры
@@ -82,7 +53,7 @@ public class StartCommand implements Command {
         markupInLine.setKeyboard(rowsInLine);
 
         message.setReplyMarkup(markupInLine);
-        message.setPhoto(new InputFile(new File("src/main/resources/images/banner.png")));
+        message.setPhoto(new InputFile(bannerService.getImage()));
         return message;
     }
 
@@ -90,7 +61,7 @@ public class StartCommand implements Command {
     public TelegramMessage apply(Update update) {
         long chatId = update.getMessage().getChatId();
         long userId = update.getMessage().getFrom().getId();
-        SendPhoto message = getStartCommand(randomFactsService);
+        SendPhoto message = getStartCommand(bannerService);
 
         User user = userService.getUserByTelegramId(userId);
         user.setState(States.BASIC_STATE);

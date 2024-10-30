@@ -43,7 +43,7 @@ public class MyFormCallback implements CallbackHandler {
         String id = callbackData.substring(CallbackType.MY_FORM.length());
         Form form = formService.getFormById(id);
 
-        String text = "ЗАЯВЛЕНИЕ " + form.getFormattedCreationDate() + "\n" + form.getText() + "\n\n" + form.getAddress();
+        String text = "ЗАЯВЛЕНИЕ " + form.getFormattedCreationDate() + "\n" + form.getText();
 
         InlineKeyboardMarkup markupInLine = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();

@@ -1,5 +1,6 @@
 package org.company.trashambulance.handlers;
 
+import org.company.trashambulance.utils.CantUnderstandUtils;
 import org.company.trashambulance.utils.Consts;
 import org.company.trashambulance.callbacks.CallbackHandler;
 import org.company.trashambulance.callbacks.CallbackType;
@@ -76,7 +77,7 @@ public class CallbacksHandler {
             assert answer != null;
             return telegramMessage;
         } else {
-            answer = new SendMessage();
+            answer = CantUnderstandUtils.getSendMessage(String.valueOf(chatId));
             answer.setText(Consts.ERROR);
             answer.setChatId(update.getCallbackQuery().getMessage().getChatId());
             return new TelegramSendMessage(answer, String.valueOf(chatId));

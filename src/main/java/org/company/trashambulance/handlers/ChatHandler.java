@@ -1,16 +1,13 @@
 package org.company.trashambulance.handlers;
 
 import lombok.extern.slf4j.Slf4j;
-import org.company.trashambulance.commands.FormAddressCommand;
 import org.company.trashambulance.commands.FormFeedbackCommand;
-import org.company.trashambulance.commands.FormTextCommand;
 import org.company.trashambulance.models.Command;
 import org.company.trashambulance.models.TelegramMessage;
 import org.company.trashambulance.models.TelegramSendMessage;
-import org.company.trashambulance.models.User;
 import org.company.trashambulance.services.UserService;
 import org.company.trashambulance.states.States;
-import org.company.trashambulance.utils.Consts;
+import org.company.trashambulance.utils.CantUnderstandUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -40,7 +37,8 @@ public class ChatHandler {
         if (commandHandler != null) {
             return commandHandler.apply(update);
         } else {
-            return new TelegramSendMessage(new SendMessage(chatId, Consts.CANT_UNDERSTAND), chatId);
+            SendMessage message = CantUnderstandUtils.getSendMessage(chatId);
+            return new TelegramSendMessage(message, chatId);
         }
     }
 }

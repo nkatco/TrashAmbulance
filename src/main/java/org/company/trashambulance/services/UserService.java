@@ -1,15 +1,19 @@
 package org.company.trashambulance.services;
 
 import jakarta.transaction.Transactional;
+import org.company.trashambulance.events.new_user.UserCreatedEvent;
 import org.company.trashambulance.models.User;
 import org.company.trashambulance.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService implements UserServiceImpl {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
 
     @Transactional
     public boolean existsByTelegramId(long id) {
@@ -23,6 +27,7 @@ public class UserService implements UserServiceImpl {
     @Transactional
     public boolean addUser(User user) {
         userRepository.save(user);
+        eventPublisher.publishEvent(new UserCreatedEvent(this, userRepository.findUserByTelegramId(user.getTelegramId())));
         return existsByTelegramId(user.getTelegramId());
     }
 

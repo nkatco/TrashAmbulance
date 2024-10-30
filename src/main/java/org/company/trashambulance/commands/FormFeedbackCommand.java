@@ -35,9 +35,9 @@ public class FormFeedbackCommand implements Command {
             try {
                 ForwardData forwardData = forwardDataService.getForwardDataByMessageId(Long.valueOf(update.getMessage().getReplyToMessage().getMessageId()));
                 if(forwardData != null) {
-                    String text = EmojiParser.parseToUnicode("<b>ОТВЕТ ОТ ОПЕРАТОРА</b>\n"
+                    String text = EmojiParser.parseToUnicode("<b>ОТВЕТ РЕГОПЕРАТОРА</b>\n"
                             + "Заявление от: " + forwardData.getForm().getFormattedCreationDate() + "\n"
-                            + "<i>" + forwardData.getForm().getAddress() + "</i>\n\n"
+                            + "\n\n"
                             + update.getMessage().getText());
 
                     telegramBotUtils.sendMessageForChat(String.valueOf(forwardData.getChatId()), text);

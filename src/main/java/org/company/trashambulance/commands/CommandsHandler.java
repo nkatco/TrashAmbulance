@@ -6,6 +6,7 @@ import org.company.trashambulance.models.Command;
 import org.company.trashambulance.models.TelegramMessage;
 import org.company.trashambulance.models.TelegramSendMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -18,13 +19,15 @@ import java.util.Map;
 public class CommandsHandler {
 
     private final Map<String, Command> commands;
+    @Value("${bot.name}")
+    String name;
 
     public CommandsHandler(@Autowired StartCommand startCommand,
                            @Autowired CheckGroupCommand checkGroupCommand
                            ) {
         this.commands = new HashMap<>();
         commands.put("/start", startCommand);
-        commands.put("/start@MyTestBoKatco_bot", checkGroupCommand);
+        commands.put("/start@ao_ecologia_bot", checkGroupCommand);
     }
 
     public TelegramMessage handleCommands(Update update) {

@@ -21,7 +21,6 @@ public class Form {
     @UuidGenerator
     private String id;
     private String text;
-    private String address;
     @Column(nullable = true)
     private String photo;
     private long telegramId;

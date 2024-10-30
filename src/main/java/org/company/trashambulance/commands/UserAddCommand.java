@@ -2,7 +2,7 @@ package org.company.trashambulance.commands;
 
 import lombok.RequiredArgsConstructor;
 import org.company.trashambulance.models.*;
-import org.company.trashambulance.services.RandomFactsService;
+import org.company.trashambulance.services.BannerService;
 import org.company.trashambulance.services.UserService;
 import org.company.trashambulance.states.States;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class UserAddCommand implements Command {
     @Autowired
     private UserService userService;
     @Autowired
-    private RandomFactsService randomFactsService;
+    private BannerService bannerService;
 
     @Override
     public TelegramMessage apply(Update update) {
@@ -46,7 +46,7 @@ public class UserAddCommand implements Command {
 
         if (userService.addUser(user)) {
             logger.info("User with chatId: {} added successfully", chatId);
-            SendPhoto message = StartCommand.getStartCommand(randomFactsService);
+            SendPhoto message = StartCommand.getStartCommand(bannerService);
             message.setChatId(String.valueOf(chatId));
             return new TelegramSendPhoto(message, String.valueOf(chatId));
         } else {

@@ -26,6 +26,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Component
@@ -149,6 +150,12 @@ public class TelegramBot extends TelegramLongPollingBot {
             checkMessage(sendMessage, chatId, userId, () -> {
                 sendMessage(photoHandler.handleCommands(update));
             });
+        } else if (update.hasMessage() && update.getMessage().hasPhoto()) {
+            chatId = update.getMessage().getChatId().toString();
+            userId = update.getMessage().getFrom().getId();
+            checkMessage(sendMessage, chatId, userId, () -> {
+                sendMessage(photoHandler.handleCommands(update));
+            });
         }
     }
 
@@ -170,7 +177,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private void checkMessage(SendMessage sendMessage, String chatId, long userId, CheckMessageCallback callback) {
+    private void checkMessage(SendMessage sendMessage, String chatId, Long userId, CheckMessageCallback callback) {
         if(!userService.existsByTelegramId(userId)) {
             sendMessage.setChatId(String.valueOf(chatId));
             sendMessage.setText("Чтобы взаимодействовать с сервисом, требуется регистрация.\n\nОтправьте свой номер, чтобы начать.");
@@ -192,7 +199,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             keyboard.add(keyboardFirstRow);
             replyKeyboardMarkup.setKeyboard(keyboard);
 
-            stateData.setCurrentState(States.ADD_PHONE_USER);
+            stateData.setCurrentStateMap(userId, States.ADD_PHONE_USER);
 
             sendMessage.setReplyMarkup(replyKeyboardMarkup);
             sendMessage(new TelegramSendMessage(sendMessage, chatId));

@@ -41,17 +41,27 @@ public class FormTextCommand implements Command {
             String text = EmojiParser.parseToUnicode(update.getMessage().getText());
             try {
                 User user = userService.getUserByTelegramId(userId);
-                user.setState(States.FORM_ADDRESS_STATE);
+                user.setState(States.FORM_STATE);
 
                 userService.saveUser(user);
 
-                stateDataDAO.removeStateDataByUserId("form_text" + "_" + user.getId());
-                stateDataDAO.removeStateDataByUserId("form_photo" + "_" + user.getId());
-                stateDataDAO.setStateData(user, "form_text", text);
+                message.setText(EmojiParser.parseToUnicode("Заявление должно иметь изображение! Попробуйте ещё раз."));
 
-                message.setText(EmojiParser.parseToUnicode("Отлично! :wink: Теперь отправьте боту адрес, где произошла проблема."));
+                InlineKeyboardMarkup markupInLine = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();
+                List<InlineKeyboardButton> rowInLine = new ArrayList<>();
+                var channelButton = new InlineKeyboardButton();
 
-                logger.info("Form save successfully for user: {}", userId);
+                rowInLine = new ArrayList<>();
+                channelButton = new InlineKeyboardButton();
+                channelButton.setText("Отмена");
+
+                channelButton.setCallbackData(CallbackType.START_BUTTON);
+                rowInLine.add(channelButton);
+                rowsInLine.add(rowInLine);
+
+                markupInLine.setKeyboard(rowsInLine);
+                message.setReplyMarkup(markupInLine);
             } catch (Exception e) {
                 message.setText("Произошла какая-то ошибка, введите /start и обратитесь к администратору.");
                 System.out.println(e);
